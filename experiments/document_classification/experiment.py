@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.utils import shuffle
 
 from algo.classification.classification_model import ClassificationModel
-from algo.util.file_util import create_folder_if_not_exist
+from algo.util.file_util import create_folder_if_not_exist, delete_create_folder
 from experiments.common.class_balancer import binary_class_balance
 from experiments.common.data_util import read_data_df, clean_data, preprocess_data
 from experiments.common.evaluation import macro_f1
@@ -18,7 +18,8 @@ from experiments.document_classification.config import TEMP_DIRECTORY, DATA_DIRE
     MODEL_NAME, SEED, SUBMISSION_FILE, BINARY_CLASS_BALANCE, CLASS, PROPORTION, TEST_LANGUAGES, TRAIN_LANGUAGES, \
     PREDICTION_DIRECTORY
 
-if not os.path.exists(TEMP_DIRECTORY): os.makedirs(TEMP_DIRECTORY)
+# if not os.path.exists(TEMP_DIRECTORY): os.makedirs(TEMP_DIRECTORY)
+delete_create_folder(TEMP_DIRECTORY)
 
 
 class TestInstanceClassifier:
@@ -65,8 +66,8 @@ if TEST_LANGUAGES is not None:
         test_preds = np.zeros((len(test_texts), config["n_fold"]))
         test_instances[lang] = TestInstanceClassifier(lang, test, test_texts, test_preds)
 
-if os.path.exists(config['output_dir']) and os.path.isdir(config['output_dir']):
-    shutil.rmtree(config['output_dir'])
+# if os.path.exists(config['output_dir']) and os.path.isdir(config['output_dir']):
+#     shutil.rmtree(config['output_dir'])
 base_output_dir = config['output_dir']
 
 for i in range(config["n_fold"]):
