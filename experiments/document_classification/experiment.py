@@ -81,13 +81,13 @@ for i in range(config["n_fold"]):
     torch.manual_seed(seed)
 
     model = ClassificationModel(MODEL_TYPE, MODEL_NAME, args=config,
-                                use_cuda=torch.cuda.is_available())
+                                use_cuda=torch.cuda.is_available(), cuda_device=3)
     # train_df, eval_df = train_test_split(train, test_size=0.1, random_state=SEED * i)
     train_df, eval_df = prepare_multilingual_data(TRAIN_LANGUAGES, DATA_DIRECTORY, seed)
     model.train_model(train_df, eval_df=eval_df, macro_f1=macro_f1, f1=f1_score, recall=recall_score,
                       precision=precision_score)
     model = ClassificationModel(MODEL_TYPE, config["best_model_dir"], args=config,
-                                use_cuda=torch.cuda.is_available())
+                                use_cuda=torch.cuda.is_available(), cuda_device=3)
 
     print(f"Making test predictions for fold {i}...")
     for lang in test_instances.keys():
