@@ -10,11 +10,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.utils import shuffle
 
 from algo.classification.classification_model import ClassificationModel
+from algo.util.file_util import create_folder_if_not_exist
 from experiments.common.class_balancer import binary_class_balance
 from experiments.common.data_util import read_data_df, clean_data, preprocess_data
 from experiments.common.evaluation import macro_f1
 from experiments.document_classification.config import TEMP_DIRECTORY, DATA_DIRECTORY, config, MODEL_TYPE, \
-    MODEL_NAME, SEED, SUBMISSION_FILE, BINARY_CLASS_BALANCE, CLASS, PROPORTION, TEST_LANGUAGES, TRAIN_LANGUAGES
+    MODEL_NAME, SEED, SUBMISSION_FILE, BINARY_CLASS_BALANCE, CLASS, PROPORTION, TEST_LANGUAGES, TRAIN_LANGUAGES, \
+    PREDICTION_DIRECTORY
 
 if not os.path.exists(TEMP_DIRECTORY): os.makedirs(TEMP_DIRECTORY)
 
@@ -70,6 +72,7 @@ base_output_dir = config['output_dir']
 for i in range(config["n_fold"]):
     print("Started Fold {}".format(i))
     config['output_dir'] = f"{base_output_dir}_{i}"
+    config["best_model_dir"] = os.path.join(config['output_dir'], "model")
 
     seed = int(SEED * (i + 1))
     config["manual_seed"] = seed
@@ -94,6 +97,7 @@ for i in range(config["n_fold"]):
     print("Completed Fold {}".format(i))
 
 # final test predictions
+create_folder_if_not_exist(PREDICTION_DIRECTORY)
 for lang in test_instances.keys():
     print(f"Calculating majority class for {lang}...")
     test_predictions = []
