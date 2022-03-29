@@ -15,7 +15,7 @@ PREDICTION_DIRECTORY = os.path.join(TEMP_DIRECTORY, 'predictions')
 SUBMISSION_FILE = os.path.join(PREDICTION_DIRECTORY, 'submission.json')
 
 MODEL_TYPE = "bigbird"
-MODEL_NAME = "google/bigbird-roberta-large"
+MODEL_NAME = "google/bigbird-roberta-base"
 # MODEL_TYPE = "bert"
 # MODEL_NAME = "bert-base-cased"
 
