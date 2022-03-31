@@ -15,7 +15,7 @@ PREDICTION_DIRECTORY = os.path.join(TEMP_DIRECTORY, 'predictions')
 SUBMISSION_FILE = os.path.join(PREDICTION_DIRECTORY, 'submission.json')
 
 MODEL_TYPE = "longformer"  # "bigbird"
-MODEL_NAME = "allenai/longformer-large-4096"
+MODEL_NAME = "allenai/longformer-base-4096"
 # MODEL_TYPE = "bert"
 # MODEL_NAME = "bert-base-cased"
 
