@@ -14,8 +14,8 @@ OUTPUT_DIRECTORY = os.path.join(TEMP_DIRECTORY, 'output')
 PREDICTION_DIRECTORY = os.path.join(TEMP_DIRECTORY, 'predictions')
 SUBMISSION_FILE = os.path.join(PREDICTION_DIRECTORY, 'submission.json')
 
-MODEL_TYPE = "longformer"  # "bigbird"
-MODEL_NAME = "allenai/longformer-base-4096"
+MODEL_TYPE = "bert"  # "bigbird"
+MODEL_NAME = "bert-large-cased"
 # MODEL_TYPE = "bert"
 # MODEL_NAME = "bert-base-cased"
 
@@ -35,7 +35,7 @@ config = {
 
     'fp16': False,
     'fp16_opt_level': 'O1',
-    'max_seq_length': 900,
+    'max_seq_length': 256,
     'train_batch_size': 4,
     'gradient_accumulation_steps': 1,
     'eval_batch_size': 4,
