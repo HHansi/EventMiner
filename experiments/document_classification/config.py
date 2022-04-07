@@ -14,13 +14,13 @@ OUTPUT_DIRECTORY = os.path.join(TEMP_DIRECTORY, 'output')
 PREDICTION_DIRECTORY = os.path.join(TEMP_DIRECTORY, 'predictions')
 SUBMISSION_FILE = os.path.join(PREDICTION_DIRECTORY, 'submission.json')
 
-MODEL_TYPE = "xlmroberta"  # "bigbird"
-MODEL_NAME = "xlm-roberta-large"
+MODEL_TYPE = "auto"  # "bigbird"
+MODEL_NAME = "neuralmind/bert-large-portuguese-cased"  # "xlm-roberta-large"
 # MODEL_TYPE = "bert"
 # MODEL_NAME = "bert-base-cased"
 
-TRAIN_LANGUAGES = ["en"]
-TEST_LANGUAGES = ["en"]
+TRAIN_LANGUAGES = ["pr"]
+TEST_LANGUAGES = ["pr"]
 
 BINARY_CLASS_BALANCE = False
 CLASS = 0  # will be used if BINARY_CLASS_BALANCE=True
@@ -35,7 +35,7 @@ config = {
 
     'fp16': False,
     'fp16_opt_level': 'O1',
-    'max_seq_length': 512,
+    'max_seq_length': 256,
     'train_batch_size': 4,
     'gradient_accumulation_steps': 1,
     'eval_batch_size': 4,
@@ -48,14 +48,14 @@ config = {
     'max_grad_norm': 1.0,
     'do_lower_case': False,
 
-    'logging_steps': 200,  #40,
-    'save_steps': 200,  #40,
+    'logging_steps': 40,  #200,
+    'save_steps': 40,  #200,
     "no_cache": False,
     'save_model_every_epoch': True,
     "save_recent_only": True,
     'n_fold': 3,
     'evaluate_during_training': True,
-    'evaluate_during_training_steps': 200,  #40,
+    'evaluate_during_training_steps': 40,  #200,
     "evaluate_during_training_verbose": True,
     'use_cached_eval_features': False,
     'save_eval_checkpoints': True,
