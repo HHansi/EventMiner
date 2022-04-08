@@ -15,12 +15,12 @@ PREDICTION_DIRECTORY = os.path.join(TEMP_DIRECTORY, 'predictions')
 SUBMISSION_FILE = os.path.join(PREDICTION_DIRECTORY, 'submission.json')
 
 MODEL_TYPE = "auto"  # "bigbird"
-MODEL_NAME = "neuralmind/bert-large-portuguese-cased"  # "xlm-roberta-large"
+MODEL_NAME = "dccuchile/bert-base-spanish-wwm-cased"  # "neuralmind/bert-large-portuguese-cased"  # "xlm-roberta-large"
 # MODEL_TYPE = "bert"
 # MODEL_NAME = "bert-base-cased"
 
-TRAIN_LANGUAGES = ["pr"]
-TEST_LANGUAGES = ["pr"]
+TRAIN_LANGUAGES = ["es"]
+TEST_LANGUAGES = ["es"]
 
 BINARY_CLASS_BALANCE = False
 CLASS = 0  # will be used if BINARY_CLASS_BALANCE=True
@@ -35,7 +35,7 @@ config = {
 
     'fp16': False,
     'fp16_opt_level': 'O1',
-    'max_seq_length': 512,
+    'max_seq_length': 256,
     'train_batch_size': 4,
     'gradient_accumulation_steps': 1,
     'eval_batch_size': 4,
