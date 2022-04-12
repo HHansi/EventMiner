@@ -14,13 +14,13 @@ OUTPUT_DIRECTORY = os.path.join(TEMP_DIRECTORY, 'output')
 PREDICTION_DIRECTORY = os.path.join(TEMP_DIRECTORY, 'predictions')
 SUBMISSION_FILE = os.path.join(PREDICTION_DIRECTORY, 'submission.json')
 
-# MODEL_TYPE = "auto"  # "bigbird"
-# MODEL_NAME = "dccuchile/bert-base-spanish-wwm-cased"  # "neuralmind/bert-large-portuguese-cased"  # "xlm-roberta-large"
-MODEL_TYPE = "bert"
-MODEL_NAME = "bert-large-cased"
+MODEL_TYPE = "xlmroberta"  # "auto"  # "bigbird"
+MODEL_NAME = "xlm-roberta-large"  # "dccuchile/bert-base-spanish-wwm-cased"  # "neuralmind/bert-large-portuguese-cased"
+# MODEL_TYPE = "bert"
+# MODEL_NAME = "bert-large-cased"
 
 TRAIN_LANGUAGES = ["en"]
-TEST_LANGUAGES = ["en"]
+TEST_LANGUAGES = ["en", "pr", "es", "hi"]
 
 BINARY_CLASS_BALANCE = False
 CLASS = 0  # will be used if BINARY_CLASS_BALANCE=True
