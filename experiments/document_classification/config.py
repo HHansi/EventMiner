@@ -17,7 +17,7 @@ SUBMISSION_FILE = os.path.join(PREDICTION_DIRECTORY, 'submission.json')
 # MODEL_TYPE = "auto"  # "bigbird"
 # MODEL_NAME = "dccuchile/bert-base-spanish-wwm-cased"  # "neuralmind/bert-large-portuguese-cased"  # "xlm-roberta-large"
 MODEL_TYPE = "bert"
-MODEL_NAME = "bert-base-cased"
+MODEL_NAME = "bert-large-cased"
 
 TRAIN_LANGUAGES = ["en"]
 TEST_LANGUAGES = ["en"]
