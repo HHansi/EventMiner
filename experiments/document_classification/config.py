@@ -19,7 +19,7 @@ MODEL_NAME = "xlm-roberta-large"  # "dccuchile/bert-base-spanish-wwm-cased"  # "
 # MODEL_TYPE = "bert"
 # MODEL_NAME = "bert-large-cased"
 
-TRAIN_LANGUAGES = ["en", "pr"]
+TRAIN_LANGUAGES = ["en", "es"]
 TEST_LANGUAGES = ["en", "pr", "es", "hi"]
 
 BINARY_CLASS_BALANCE = False
