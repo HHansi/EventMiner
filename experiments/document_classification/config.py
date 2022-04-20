@@ -19,9 +19,9 @@ MODEL_NAME = "bert-base-multilingual-cased"  # "xlm-roberta-large"  # "dccuchile
 # MODEL_TYPE = "bert"
 # MODEL_NAME = "bert-large-cased"
 
-TRAIN_LANGUAGES = ["pr"]
+TRAIN_LANGUAGES = ["es"]
 # TEST_LANGUAGES = ["en", "pr", "es", "hi"]
-TEST_LANGUAGES = ["pr"]
+TEST_LANGUAGES = ["es"]
 
 BINARY_CLASS_BALANCE = False
 CLASS = 0  # will be used if BINARY_CLASS_BALANCE=True
