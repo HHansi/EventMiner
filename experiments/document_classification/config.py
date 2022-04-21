@@ -19,13 +19,15 @@ MODEL_NAME = "bert-base-multilingual-cased"  # "xlm-roberta-large"  # "dccuchile
 # MODEL_TYPE = "bert"
 # MODEL_NAME = "bert-large-cased"
 
-TRAIN_LANGUAGES = ["en", "pr"]
+TRAIN_LANGUAGES = ["en", "es"]
 TEST_LANGUAGES = ["en", "pr", "es", "hi"]
 # TEST_LANGUAGES = ["es"]
 
 BINARY_CLASS_BALANCE = False
 CLASS = 0  # will be used if BINARY_CLASS_BALANCE=True
 PROPORTION = 0.75  # proportion of the given CLASS expected in final dataset (will be used if BINARY_CLASS_BALANCE=True)
+
+CUDA_DEVICE = 1
 
 config = {
     # 'output_dir': 'temp/outputs/',
