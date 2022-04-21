@@ -19,9 +19,9 @@ MODEL_NAME = "bert-base-multilingual-cased"  # "xlm-roberta-large"  # "dccuchile
 # MODEL_TYPE = "bert"
 # MODEL_NAME = "bert-large-cased"
 
-TRAIN_LANGUAGES = ["es"]
-# TEST_LANGUAGES = ["en", "pr", "es", "hi"]
-TEST_LANGUAGES = ["es"]
+TRAIN_LANGUAGES = ["en", "pr"]
+TEST_LANGUAGES = ["en", "pr", "es", "hi"]
+# TEST_LANGUAGES = ["es"]
 
 BINARY_CLASS_BALANCE = False
 CLASS = 0  # will be used if BINARY_CLASS_BALANCE=True
@@ -49,14 +49,14 @@ config = {
     'max_grad_norm': 1.0,
     'do_lower_case': False,
 
-    'logging_steps': 40,  #200,
-    'save_steps': 40,  #200,
+    'logging_steps': 200,  #40,
+    'save_steps': 200,  #40,
     "no_cache": False,
     'save_model_every_epoch': True,
     "save_recent_only": True,
     'n_fold': 3,
     'evaluate_during_training': True,
-    'evaluate_during_training_steps': 40,  #20,
+    'evaluate_during_training_steps': 200,  #40,
     "evaluate_during_training_verbose": True,
     'use_cached_eval_features': False,
     'save_eval_checkpoints': True,
