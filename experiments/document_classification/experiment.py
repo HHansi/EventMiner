@@ -16,7 +16,7 @@ from experiments.common.data_util import read_data_df, clean_data, preprocess_da
 from experiments.common.evaluation import macro_f1
 from experiments.document_classification.config import TEMP_DIRECTORY, DATA_DIRECTORY, config, MODEL_TYPE, \
     MODEL_NAME, SEED, SUBMISSION_FILE, BINARY_CLASS_BALANCE, CLASS, PROPORTION, TEST_LANGUAGES, TRAIN_LANGUAGES, \
-    PREDICTION_DIRECTORY
+    PREDICTION_DIRECTORY, CUDA_DEVICE
 
 # if not os.path.exists(TEMP_DIRECTORY): os.makedirs(TEMP_DIRECTORY)
 delete_create_folder(TEMP_DIRECTORY)
@@ -81,14 +81,19 @@ for i in range(config["n_fold"]):
     np.random.seed(seed)
     torch.manual_seed(seed)
 
+    if os.path.isdir(MODEL_NAME):
+        print(f'load model at {os.path.join(MODEL_NAME, f"{i}/model")}')
+        model = ClassificationModel(MODEL_TYPE, os.path.join(MODEL_NAME, f"{i}/model"), args=config,
+                                    use_cuda=torch.cuda.is_available(), cuda_device=CUDA_DEVICE)
     model = ClassificationModel(MODEL_TYPE, MODEL_NAME, args=config,
-                                use_cuda=torch.cuda.is_available(), cuda_device=1)
+                                use_cuda=torch.cuda.is_available(), cuda_device=CUDA_DEVICE)
     # train_df, eval_df = train_test_split(train, test_size=0.1, random_state=SEED * i)
     train_df, eval_df = prepare_multilingual_data(TRAIN_LANGUAGES, DATA_DIRECTORY, seed)
     model.train_model(train_df, eval_df=eval_df, macro_f1=macro_f1, f1=f1_score, recall=recall_score,
                       precision=precision_score)
+
     model = ClassificationModel(MODEL_TYPE, config["best_model_dir"], args=config,
-                                use_cuda=torch.cuda.is_available(), cuda_device=1)
+                                use_cuda=torch.cuda.is_available(), cuda_device=CUDA_DEVICE)
 
     print(f"Making test predictions for fold {i}...")
     for lang in test_instances.keys():
