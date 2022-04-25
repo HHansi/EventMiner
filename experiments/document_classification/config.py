@@ -15,11 +15,12 @@ PREDICTION_DIRECTORY = os.path.join(TEMP_DIRECTORY, 'predictions')
 SUBMISSION_FILE = os.path.join(PREDICTION_DIRECTORY, 'submission.json')
 
 MODEL_TYPE = "bert"  # "xlmroberta"  # "auto"  # "bigbird"
-MODEL_NAME = "bert-base-multilingual-cased"  # "xlm-roberta-large"  # "dccuchile/bert-base-spanish-wwm-cased"  # "neuralmind/bert-large-portuguese-cased"
+# MODEL_NAME = "bert-base-multilingual-cased"  # "xlm-roberta-large"  # "dccuchile/bert-base-spanish-wwm-cased"  # "neuralmind/bert-large-portuguese-cased"
+MODEL_NAME = "/experiments/tranasinghe/EventMiner/trained_models/mbert-en/"
 # MODEL_TYPE = "bert"
 # MODEL_NAME = "bert-large-cased"
 
-TRAIN_LANGUAGES = ["en", "pr", "es"]
+TRAIN_LANGUAGES = ["pr"]
 TEST_LANGUAGES = ["en", "pr", "es", "hi"]
 # TEST_LANGUAGES = ["es"]
 
@@ -51,14 +52,14 @@ config = {
     'max_grad_norm': 1.0,
     'do_lower_case': False,
 
-    'logging_steps': 250,  #40,
-    'save_steps': 250,  #40,
+    'logging_steps': 40,  #200,
+    'save_steps': 40,  #200,
     "no_cache": False,
     'save_model_every_epoch': True,
     "save_recent_only": True,
     'n_fold': 3,
     'evaluate_during_training': True,
-    'evaluate_during_training_steps': 250,  #40,
+    'evaluate_during_training_steps': 40,  #200,
     "evaluate_during_training_verbose": True,
     'use_cached_eval_features': False,
     'save_eval_checkpoints': True,
