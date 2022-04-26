@@ -16,11 +16,11 @@ SUBMISSION_FILE = os.path.join(PREDICTION_DIRECTORY, 'submission.json')
 
 MODEL_TYPE = "bert"  # "xlmroberta"  # "auto"  # "bigbird"
 # MODEL_NAME = "bert-base-multilingual-cased"  # "xlm-roberta-large"  # "dccuchile/bert-base-spanish-wwm-cased"  # "neuralmind/bert-large-portuguese-cased"
-MODEL_NAME = "/experiments/tranasinghe/EventMiner/trained_models/mbert-en/"
+MODEL_NAME = "/experiments/tranasinghe/EventMiner/trained_models/xlm-r-en/"
 # MODEL_TYPE = "bert"
 # MODEL_NAME = "bert-large-cased"
 
-TRAIN_LANGUAGES = ["es"]
+TRAIN_LANGUAGES = ["pr"]
 TEST_LANGUAGES = ["en", "pr", "es", "hi"]
 # TEST_LANGUAGES = ["es"]
 
