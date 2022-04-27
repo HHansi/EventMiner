@@ -20,7 +20,7 @@ MODEL_NAME = "/experiments/tranasinghe/EventMiner/trained_models/xlm-r-en/"
 # MODEL_TYPE = "bert"
 # MODEL_NAME = "bert-large-cased"
 
-TRAIN_LANGUAGES = ["pr"]
+TRAIN_LANGUAGES = ["es"]
 TEST_LANGUAGES = ["en", "pr", "es", "hi"]
 # TEST_LANGUAGES = ["es"]
 
