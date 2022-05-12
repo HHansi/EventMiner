@@ -15,13 +15,13 @@ PREDICTION_DIRECTORY = os.path.join(TEMP_DIRECTORY, 'predictions')
 SUBMISSION_FILE = os.path.join(PREDICTION_DIRECTORY, 'submission.json')
 
 MODEL_TYPE = "xlmroberta"  # "xlmroberta"  # "auto"  # "bigbird"
-# MODEL_NAME = "bert-base-multilingual-cased"  # "xlm-roberta-large"  # "dccuchile/bert-base-spanish-wwm-cased"  # "neuralmind/bert-large-portuguese-cased"
-MODEL_NAME = "/experiments/tranasinghe/EventMiner/trained_models/xlm-r-en/"
+MODEL_NAME = "xlm-roberta-large"  # "bert-base-multilingual-cased"   # "dccuchile/bert-base-spanish-wwm-cased"  # "neuralmind/bert-large-portuguese-cased"
+# MODEL_NAME = "/experiments/tranasinghe/EventMiner/trained_models/xlm-r-en/"
 # MODEL_TYPE = "bert"
 # MODEL_NAME = "bert-large-cased"
 
 TRAIN_LANGUAGES = ["es"]
-TEST_LANGUAGES = ["en", "pr", "es", "hi"]
+TEST_LANGUAGES = ["es"]
 # TEST_LANGUAGES = ["es"]
 
 BINARY_CLASS_BALANCE = False
