@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 
 from algo.util.file_util import create_folder_if_not_exist
 from data_process.data_preprocessor import remove_links, remove_repeating_characters
-from experiments.document_classification.monolingual_config import SEED, BASE_PATH
+from experiments.document_classification.config import SEED, BASE_PATH
 # from experiments.coreference_identifiation.en_config import SEED, BASE_PATH, DATA_DIRECTORY
 
 
