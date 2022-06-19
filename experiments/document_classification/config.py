@@ -6,8 +6,6 @@ SEED = 157
 BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 DATA_DIRECTORY = os.path.join(BASE_PATH, 'data')
 
-# TEMP_DIRECTORY = "temp/data"
-# SUBMISSION_FILE = "submission.json"
 TEMP_DIRECTORY = os.path.join(BASE_PATH, 'temp')
 OUTPUT_DIRECTORY = os.path.join(TEMP_DIRECTORY, 'output')
 
@@ -15,14 +13,12 @@ PREDICTION_DIRECTORY = os.path.join(TEMP_DIRECTORY, 'predictions')
 SUBMISSION_FILE = os.path.join(PREDICTION_DIRECTORY, 'submission.json')
 
 MODEL_TYPE = "xlmroberta"  # "xlmroberta"  # "auto"  # "bigbird"
-MODEL_NAME = "xlm-roberta-large"  # "bert-base-multilingual-cased"   # "dccuchile/bert-base-spanish-wwm-cased"  # "neuralmind/bert-large-portuguese-cased"
-# MODEL_NAME = "/experiments/tranasinghe/EventMiner/trained_models/xlm-r-en/"
-# MODEL_TYPE = "bert"
-# MODEL_NAME = "bert-large-cased"
+# model name or directory
+MODEL_NAME = "xlm-roberta-large"  # "dccuchile/bert-base-spanish-wwm-cased"  # "neuralmind/bert-large-portuguese-cased"
 
+# list of one or more languages for training and testing
 TRAIN_LANGUAGES = ["es"]
 TEST_LANGUAGES = ["es"]
-# TEST_LANGUAGES = ["es"]
 
 BINARY_CLASS_BALANCE = False
 CLASS = 0  # will be used if BINARY_CLASS_BALANCE=True
@@ -31,8 +27,6 @@ PROPORTION = 0.75  # proportion of the given CLASS expected in final dataset (wi
 CUDA_DEVICE = 1
 
 config = {
-    # 'output_dir': 'temp/outputs/',
-    # "best_model_dir": "temp/outputs/best_model",
     'output_dir': OUTPUT_DIRECTORY,
     'best_model_dir': os.path.join(OUTPUT_DIRECTORY, "model"),
     'cache_dir': 'temp/cache_dir/',
