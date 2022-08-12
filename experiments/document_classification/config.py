@@ -16,10 +16,9 @@ SUBMISSION_FILE = os.path.join(PREDICTION_DIRECTORY, 'submission.json')
 # # model name or directory
 # MODEL_NAME = "xlm-roberta-large"  # "dccuchile/bert-base-spanish-wwm-cased"  # "neuralmind/bert-large-portuguese-cased"
 
-MODEL_TYPE = "bert"  # "auto"
+MODEL_TYPE = "auto"
 # model name or directory
-# MODEL_NAME = "/experiments/tranasinghe/EventMiner/trained_models/longformer-256/0/model/"
-MODEL_NAME = "/experiments/tranasinghe/MultiEventMiner/trained_models2/sentence/bert-large-cased-en/model_0"
+MODEL_NAME = "/experiments/tranasinghe/EventMiner/trained_models/longformer-256/0/model/"
 
 
 # list of one or more languages for training and testing
