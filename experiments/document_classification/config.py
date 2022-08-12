@@ -16,9 +16,9 @@ SUBMISSION_FILE = os.path.join(PREDICTION_DIRECTORY, 'submission.json')
 # # model name or directory
 # MODEL_NAME = "xlm-roberta-large"  # "dccuchile/bert-base-spanish-wwm-cased"  # "neuralmind/bert-large-portuguese-cased"
 
-MODEL_TYPE = "auto"
+MODEL_TYPE = "bert"
 # model name or directory
-MODEL_NAME = "/experiments/tranasinghe/EventMiner/trained_models/longformer-900/0/model/"
+MODEL_NAME = "/experiments/tranasinghe/EventMiner/trained_models/bert-256/0/model/"
 
 
 # list of one or more languages for training and testing
@@ -38,7 +38,7 @@ config = {
 
     'fp16': False,
     'fp16_opt_level': 'O1',
-    'max_seq_length': 900,
+    'max_seq_length': 256,
     'train_batch_size': 4,
     'gradient_accumulation_steps': 1,
     'eval_batch_size': 4,
