@@ -7,9 +7,11 @@ from algo.classification.classification_model import ClassificationModel
 from experiments.document_classification.config import MODEL_TYPE, MODEL_NAME, config, CUDA_DEVICE
 
 # document
-# text_en = "Beijing to build city's tallest building - People's Daily Online\nBeijing to build city's tallest building\n08:16, September 20, 2011\nBEIJING, Sept. 19 (Xinhua) -- A groundbreaking ceremony for a new skyscraper took place in Beijing's central business district (CBD) on Monday, marking the beginning of construction on what will eventually be the city's tallest skyscraper.The design of the China Zun building was in"
-# sentence
-text_en = "A child ran around in a T-shirt that read: New Great Country Wonderful Country China."
+text_en = "Beijing to build city's tallest building - People's Daily Online\nBeijing to build city's tallest building\n08:16, September 20, 2011\nBEIJING, Sept. 19 (Xinhua) -- A groundbreaking ceremony for a new skyscraper took place in Beijing's central business district (CBD) on Monday, marking the beginning of construction on what will eventually be the city's tallest skyscraper.The design of the China Zun building was in"
+# # sentence
+# text_en = "A child ran around in a T-shirt that read: New Great Country Wonderful Country China."
+
+texts = [text_en]
 
 print(f'loading model')
 start_time = time.time()
@@ -28,7 +30,7 @@ print(f'VMS: {process.memory_info().vms/ 1024 ** 2}')
 
 print(f'predicting')
 start_time = time.time()
-predictions, raw_predictions = model.predict([text_en])
+predictions, raw_predictions = model.predict(texts)
 end_time = time.time()
 print(f'Predicted in {(end_time - start_time)} seconds \n')
 
