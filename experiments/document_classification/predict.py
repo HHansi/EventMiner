@@ -6,7 +6,10 @@ import os, psutil
 from algo.classification.classification_model import ClassificationModel
 from experiments.document_classification.config import MODEL_TYPE, MODEL_NAME, config, CUDA_DEVICE
 
-text_en = "Beijing to build city's tallest building - People's Daily Online\nBeijing to build city's tallest building\n08:16, September 20, 2011\nBEIJING, Sept. 19 (Xinhua) -- A groundbreaking ceremony for a new skyscraper took place in Beijing's central business district (CBD) on Monday, marking the beginning of construction on what will eventually be the city's tallest skyscraper.The design of the China Zun building was in"
+# document
+# text_en = "Beijing to build city's tallest building - People's Daily Online\nBeijing to build city's tallest building\n08:16, September 20, 2011\nBEIJING, Sept. 19 (Xinhua) -- A groundbreaking ceremony for a new skyscraper took place in Beijing's central business district (CBD) on Monday, marking the beginning of construction on what will eventually be the city's tallest skyscraper.The design of the China Zun building was in"
+# sentence
+text_en = "A child ran around in a T-shirt that read: New Great Country Wonderful Country China."
 
 print(f'loading model')
 start_time = time.time()
