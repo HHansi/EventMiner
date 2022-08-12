@@ -1,6 +1,7 @@
 # Created by Hansi at 8/12/2022
 import torch
 import time
+import os, psutil
 
 from algo.classification.classification_model import ClassificationModel
 from experiments.document_classification.config import MODEL_TYPE, MODEL_NAME, config, CUDA_DEVICE
@@ -17,6 +18,9 @@ print(f'loaded: {MODEL_NAME}')
 
 print(f'sleeping')
 time.sleep(10)
+
+process = psutil.Process(os.getpid())
+print(f'RSS: {process.memory_info().rss/ 1024 ** 2}')
 
 print(f'predicting')
 start_time = time.time()
