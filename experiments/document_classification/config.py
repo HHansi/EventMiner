@@ -18,7 +18,7 @@ SUBMISSION_FILE = os.path.join(PREDICTION_DIRECTORY, 'submission.json')
 
 MODEL_TYPE = "bert"
 # model name or directory
-MODEL_NAME = "/experiments/tranasinghe/EventMiner/trained_models/bert-512/1/model/"
+MODEL_NAME = "/experiments/tranasinghe/EventMiner/trained_models/longformer-256/0/model/"
 
 # list of one or more languages for training and testing
 TRAIN_LANGUAGES = ["es"]
@@ -37,7 +37,7 @@ config = {
 
     'fp16': False,
     'fp16_opt_level': 'O1',
-    'max_seq_length': 512,
+    'max_seq_length': 256,
     'train_batch_size': 4,
     'gradient_accumulation_steps': 1,
     'eval_batch_size': 4,
