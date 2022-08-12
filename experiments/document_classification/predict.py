@@ -12,17 +12,17 @@ start_time = time.time()
 model = ClassificationModel(MODEL_TYPE, MODEL_NAME, args=config,
                             use_cuda=torch.cuda.is_available(), cuda_device=CUDA_DEVICE)
 end_time = time.time()
-print(f'Model loaded in {int(end_time - start_time)} seconds \n')
+print(f'Model loaded in {(end_time - start_time)} seconds \n')
 print(f'loaded: {MODEL_NAME}')
 
 print(f'sleeping')
-time.sleep(2)
+time.sleep(10)
 
 print(f'predicting')
 start_time = time.time()
 predictions, raw_predictions = model.predict([text_en])
 end_time = time.time()
-print(f'Predicted in {int(end_time - start_time)} seconds \n')
+print(f'Predicted in {(end_time - start_time)} seconds \n')
 
 print(f'predictions: {predictions}')
 print(f'raw predictions: {raw_predictions}')
