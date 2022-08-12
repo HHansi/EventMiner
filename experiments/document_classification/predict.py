@@ -16,8 +16,8 @@ end_time = time.time()
 print(f'Model loaded in {(end_time - start_time)} seconds \n')
 print(f'loaded: {MODEL_NAME}')
 
-print(f'sleeping')
-time.sleep(10)
+# print(f'sleeping')
+# time.sleep(10)
 
 process = psutil.Process(os.getpid())
 print(f'RSS: {process.memory_info().rss/ 1024 ** 2}')
