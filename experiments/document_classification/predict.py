@@ -21,6 +21,7 @@ print(f'loaded: {MODEL_NAME}')
 
 process = psutil.Process(os.getpid())
 print(f'RSS: {process.memory_info().rss/ 1024 ** 2}')
+print(f'VMS: {process.memory_info().vms/ 1024 ** 2}')
 
 print(f'predicting')
 start_time = time.time()
