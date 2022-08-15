@@ -16,7 +16,7 @@ SUBMISSION_FILE = os.path.join(PREDICTION_DIRECTORY, 'submission.json')
 # # model name or directory
 # MODEL_NAME = "xlm-roberta-large"  # "dccuchile/bert-base-spanish-wwm-cased"  # "neuralmind/bert-large-portuguese-cased"
 
-MODEL_TYPE = "bert"
+MODEL_TYPE = "bigbird"
 # model name or directory
 MODEL_NAME = "/experiments/tranasinghe/EventMiner/trained_models/bigbird-256/0/model/"
 
