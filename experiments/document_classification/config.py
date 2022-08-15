@@ -18,7 +18,7 @@ SUBMISSION_FILE = os.path.join(PREDICTION_DIRECTORY, 'submission.json')
 
 MODEL_TYPE = "bigbird"
 # model name or directory
-MODEL_NAME = "/experiments/tranasinghe/EventMiner/trained_models/bigbird-256/0/model/"
+MODEL_NAME = "/experiments/tranasinghe/EventMiner/trained_models/bigbird-base-900/0/model/"
 
 
 # list of one or more languages for training and testing
